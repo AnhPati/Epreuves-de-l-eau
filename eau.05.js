@@ -49,7 +49,15 @@ const isValidArguments = (arguments) => {
     if (arguments.length === 2) {
         return arguments
     } else {
-        return console.log("Une erreur est survenue. Veuillez renseigner au moins un argument.")
+        return console.log("Une erreur est survenue. Veuillez renseigner deux arguments.")
+    }
+}
+
+const isValidString = (string) => {
+    if (isNaN(string)) {
+        return string
+    } else {
+        return console.log("Une erreur est survenue.")
     }
 }
 
@@ -61,9 +69,9 @@ const getArguments = () => {
 
 /*Résolution*/
 const sayIfHaveSentence = () => {
-    const strings = getArguments()
+    const strings = isValidString(isValidArguments(getArguments()))
 
-    if (!isValidArguments(strings)) {
+    if ((!strings)) {
         return
     }
 
