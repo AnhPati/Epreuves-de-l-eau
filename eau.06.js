@@ -21,7 +21,6 @@ const oneOnTwoUpperCase = (string) => {
     return stringArray.join('')
 }
 
-
 /*Gestion des erreurs*/
 const isValidArguments = (arguments) => {
     if (arguments.length === 1) {
