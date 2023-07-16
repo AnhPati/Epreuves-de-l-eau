@@ -19,7 +19,7 @@ const isValidArguments = (arguments) => {
     if (arguments.length >= 3) {
         return arguments
     } else {
-        return console.log("Une erreur est survenue. Veuillez renseigner trois arguments.")
+        return console.log("Une erreur est survenue. Veuillez renseigner au moins trois arguments.")
     }
 }
 
