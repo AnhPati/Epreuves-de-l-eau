@@ -31,8 +31,6 @@ const minValueASCII = (array) => {
         for (j = 0; j < array[i].length; j++) {
 
             if (array[i].charCodeAt(j) < result[0].charCodeAt(j)) {
-                console.log(array[i] + " " + array[i].charCodeAt(j) + " et " + j)
-                console.log(result[0] + " " + result[0].charCodeAt(j) + " et " + j)
                 result[0] = array[i]
                 result[1] = i
             } else if (array[i].charCodeAt(j) === result[0].charCodeAt(j)) {
