@@ -1,6 +1,6 @@
 /*Fonctions*/
 const celebration = (string) => {
-    return console.log(`Je suis sorti des vainqueurs des épreuves de l'eau, ce fut ${string} !`)
+    return console.log(`Je suis sorti vainqueur des épreuves de l'eau, ce fut ${string} !`)
 }
 
 /*Gestion des erreurs*/
