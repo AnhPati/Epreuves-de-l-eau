@@ -6,45 +6,39 @@ const gapCalc = (numbers) => {
     for (i = 0; i < numbers.length; i++) {
         for (j = 0; j < numbers.length; j++) {
             if (i !== j) {
-
                 if (numbers[i] >= 0 && numbers[j] >= 0) {
                     if (numbers[i] >= numbers[j]) {
                         gapsArray.push(numbers[i] - numbers[j])
                     } else {
-                        gapsArray.push(Number(numbers[j]) - Number(numbers[i]))
+                        gapsArray.push(numbers[j] - numbers[i])
                     }
-                } else if (numbers[i] < 0 || numbers[j] < 0) {
-                    if (numbers[i] >= numbers[j]) {
-                        tempNumbers[0] = negativeToPositive(numbers[j])
-                        gapsArray.push(Number(numbers[i]) + tempNumbers[0])
-                    } else {
-                        tempNumbers[0] = negativeToPositive(numbers[i])
-                        gapsArray.push(Number(numbers[j]) + tempNumbers[0])
-                    }
+                } else if (numbers[i] < 0 && numbers[j] > 0) {
+                    tempNumbers[0] = negativeToPositive(numbers[i])
+                    gapsArray.push(numbers[j] + tempNumbers[0])
+
+                } else if (numbers[j] < 0 && numbers[i] > 0) {
+                    tempNumbers[0] = negativeToPositive(numbers[j])
+                    gapsArray.push(numbers[i] + tempNumbers[0])
+
                 } else {
-                    if (numbers[i] >= numbers[j]) {
-                        tempNumbers[0] = negativeToPositive(numbers[i])
-                        tempNumbers[1] = negativeToPositive(numbers[j])
-                        gapsArray.push(tempNumbers[1] - tempNumbers[0])
-                    } else {
-                        tempNumbers[0] = negativeToPositive(numbers[i])
-                        tempNumbers[1] = negativeToPositive(numbers[j])
+                    tempNumbers[0] = negativeToPositive(numbers[i])
+                    tempNumbers[1] = negativeToPositive(numbers[j])
+
+                    if (tempNumbers[0] >= tempNumbers[1]) {
                         gapsArray.push(tempNumbers[0] - tempNumbers[1])
+                    } else {
+                        gapsArray.push(tempNumbers[1] - tempNumbers[0])
                     }
                 }
             }
         }
     }
 
-    console.log("GapArray : " + gapsArray)
-
     return minGap(gapsArray)
 }
 
 const negativeToPositive = (number) => {
-    console.log(number)
     let numberString = number.toString().slice(1)
-
     return Number(numberString)
 }
 
@@ -94,6 +88,8 @@ const getMinGap = () => {
     for (i = 0; i < numbers.length; i++) {
         if (!isValidNumber(numbers[i])) {
             return
+        } else {
+            numbers[i] = isValidNumber(numbers[i])
         }
     }
 
