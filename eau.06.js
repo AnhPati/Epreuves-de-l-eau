@@ -46,15 +46,17 @@ const getArguments = () => {
 
 /*Résolution*/
 const getOneOnTwoUpperCase = () => {
-    const string = isValidArguments(getArguments())
+    let string = isValidArguments(getArguments())
 
     if (!string) {
         return
-    } else if (!isValidString(string)) {
+    } else if (!isValidString(string[0])) {
         return
+    } else {
+        isValidString(string[0])
     }
 
-    return console.log(oneOnTwoUpperCase(string))
+    return console.log(oneOnTwoUpperCase(string[0]))
 }
 
 /*Affichage du résultat*/
