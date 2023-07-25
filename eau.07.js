@@ -45,10 +45,10 @@ const changeFirstLetterUpperCase = () => {
 
     if (!string) {
         return
-    } else if (!isValidString(string)) {
+    } else if (!isValidString(string[0])) {
         return
     }
-    console.log(string)
+
     return console.log(firstLetterUpperCase(string[0]))
 }
 
