@@ -42,15 +42,22 @@ const getArguments = () => {
 
 /*Résolution*/
 const getConsecutiveNumbers = () => {
-    const arguments = isValidArguments(getArguments())
+    const numbers = isValidArguments(getArguments())
 
-    if (!arguments) {
-        return
-    } else if (!isValidNumber(arguments[0] || !isValidNumber(arguments[1]))) {
+    if (!numbers) {
         return
     }
 
-    return console.log(consecutiveNumbers(arguments[0], arguments[1]))
+    for (let i = 0; i < numbers.length; i++) {
+        if (!isValidNumber(numbers[i])) {
+            return
+        } else {
+            numbers[i] = isValidNumber(numbers[i])
+        }
+    }
+
+
+    return console.log(consecutiveNumbers(numbers[0], numbers[1]))
 }
 
 /*Affichage du résultat*/
