@@ -13,8 +13,6 @@ const compareStrings = (firstString, secondString) => {
         ]
 
         for (i = 1; i < secondStringArray.length; i++) {
-            console.log(i)
-            console.log(firstStringIndex)
             if (secondStringArray[i] === firstStringArray[firstStringIndex]) {
                 compareArray.push(firstStringArray[i])
                 firstStringIndex += 1
