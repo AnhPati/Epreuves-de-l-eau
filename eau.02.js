@@ -10,10 +10,10 @@ const reverseArguments = (arguments) => {
 
 /*Gestion des erreurs*/
 const isValidArguments = (arguments) => {
-    if (arguments.length >= 1) {
+    if (arguments.length > 1) {
         return arguments
     } else {
-        return console.log("Une erreur est survenue. Le script nécessite au moins un argument.")
+        return console.log("Une erreur est survenue. Le script nécessite au moins deux arguments.")
     }
 }
 
