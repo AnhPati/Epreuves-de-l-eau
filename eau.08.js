@@ -3,7 +3,7 @@ const isValidNumber = (argument) => {
     let numberOrString = argument.split('')
     result = false
 
-    for (element of numberOrString) {
+    for (const element of numberOrString) {
         if (element >= 0 && element <= 9) {
             result = true
         } else {
@@ -17,6 +17,7 @@ const isValidNumber = (argument) => {
 
 /*Gestion des erreurs*/
 const isValidArguments = (arguments) => {
+    console.log('Bonne taille ?', arguments.lenght)
     if (arguments.length === 1) {
         return arguments
     } else {
@@ -35,6 +36,8 @@ const isValidArguments = (arguments) => {
 /*Parsing*/
 const getArguments = () => {
     const arguments = process.argv.slice(2)
+    console.log('arguments :', arguments)
+    console.log(arguments.lenght === 1)
     return arguments
 }
 
@@ -45,7 +48,7 @@ const getIsANumber = () => {
     if (!argument) {
         return
     }
-
+    console.log('getIsANumber argument :', argument)
     return console.log(isValidNumber(argument[0]))
 }
 
